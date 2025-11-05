@@ -1,0 +1,76 @@
+
+
+/* Nav */
+.nav-menu {
+    &__link {
+        color: rgba(255, 255, 255, 0.7) !important;
+        font-weight: 500;
+        margin-right: 15px;
+        padding: 10px 0;
+        border-bottom: 2px solid transparent;
+        transition: border-bottom-color $duracion-transicion, color $duracion-transicion;
+        &:hover,
+        &--active {
+            color: $color-texto-claro !important;
+            border-bottom-color: $color-acento-principal;
+        }
+    }
+
+    &_boton {
+        background-color: $color-acento-secundario;
+        color: $color-texto-claro; 
+        border-radius: $borde-redondeado;
+        padding: 5px 15px;
+        @include transicion-suave(background-color);
+
+        &:hover {
+            background-color: darken($color-acento-secundario, 7%);
+        }
+    }
+}
+
+
+/* Hero */
+.hero-section {
+    background: linear-gradient(135deg, lighten($color-principal, 10%) 0%, lighten($color-principal, 20%) 100%); 
+    color: $color-texto-claro;
+    padding: 100px 0;
+    text-align: center;
+
+    &__titulo {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+}
+
+
+/* Productos */
+.card-product {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    transition: transform $duracion-transicion, box-shadow $duracion-transicion;
+    overflow: hidden; 
+    margin-bottom: $espacio-tarjeta-mb;
+    @include flex-columna-centrado;
+    padding: 30px;
+    &:hover {
+        transform: translateY($desplazamiento-hover); 
+        box-shadow: 0 10px 20px $sombra-tarjeta;
+    }
+    
+    &__body-text {
+        color: $color-texto-gris; 
+        font-size: 0.95rem;
+        flex-grow: 1; 
+    }
+}
+
+.card-body {
+    @include flex-columna-centrado;
+    text-align: center;
+    .btn {
+        margin-top: auto;
+    }
+}

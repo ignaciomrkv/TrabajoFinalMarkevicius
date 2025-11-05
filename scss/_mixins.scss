@@ -1,0 +1,14 @@
+
+@mixin transicion-suave($propiedad) {
+    transition: $propiedad $duracion-transicion;
+}
+
+@mixin flex-columna-centrado {
+    display: flex;
+    flex-direction: column;
+}
+
+%enlace-base {
+    text-decoration: none;
+    @include transicion-suave(color);
+}

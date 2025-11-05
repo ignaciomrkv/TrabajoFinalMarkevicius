@@ -1,0 +1,42 @@
+
+.header {
+    background-color: $color-principal;
+    box-shadow: 0 4px 6px $sombra-header;
+
+    .header-logo {
+        &_texto {
+            font-family: $fuente-logo;
+            color: $color-texto-claro;
+            font-size: $tamano-logo;
+            letter-spacing: 1px;
+            @include transicion-suave(color);
+            
+            &:hover {
+                color: lighten($color-texto-claro, 20%); 
+            }
+        }
+    }
+}
+
+.main-content {
+    padding-top: $padding-main-top; 
+    padding-bottom: $padding-main-bottom; 
+    flex-grow: 1; 
+    background-color: $color-fondo;
+}
+
+.footer {
+    background-color: $color-secundario;
+    color: $color-gris-claro;
+    padding: 15px 0; 
+    font-size: 0.85rem;
+    margin-top: auto; 
+    &__link {
+        @extend %enlace-base; 
+        color: darken($color-gris-claro, 10%);
+        
+        &:hover {
+            color: $color-acento-principal;
+        }
+    }
+}
